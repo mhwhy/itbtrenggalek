@@ -1,0 +1,193 @@
+<html>
+<head>
+    <title>ITB Trenggalek</title>
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        const App = () => {
+            const [menuOpen, setMenuOpen] = useState(false);
+
+            return (
+                <div className="bg-white">
+                    <header className="bg-white shadow">
+                        <div className="container mx-auto flex justify-between items-center py-4 px-6">
+                            <img src="https://placehold.co/50x50" alt="ITB Trenggalek Logo" className="h-10"/>
+                            <nav className="hidden md:flex space-x-4">
+                                <a href="#" className="text-gray-700 hover:text-orange-500">Home</a>
+                                <a href="#" className="text-orange-500 border-b-2 border-orange-500">Tentang Kami</a>
+                                <a href="#" className="text-gray-700 hover:text-orange-500">Layanan</a>
+                                <a href="#" className="text-gray-700 hover:text-orange-500">Berita</a>
+                            </nav>
+                            <button className="hidden md:block bg-orange-500 text-white px-4 py-2 rounded">Info Pendaftaran</button>
+                            <button className="md:hidden text-gray-700" onClick={() => setMenuOpen(!menuOpen)}>
+                                <i className="fas fa-bars"></i>
+                            </button>
+                        </div>
+                        {menuOpen && (
+                            <div className="md:hidden bg-white shadow-lg">
+                                <nav className="flex flex-col space-y-2 p-4">
+                                    <a href="#" className="text-gray-700 hover:text-orange-500">Home</a>
+                                    <a href="#" className="text-orange-500 border-b-2 border-orange-500">Tentang Kami</a>
+                                    <a href="#" className="text-gray-700 hover:text-orange-500">Layanan</a>
+                                    <a href="#" className="text-gray-700 hover:text-orange-500">Berita</a>
+                                    <button className="bg-orange-500 text-white px-4 py-2 rounded">Info Pendaftaran</button>
+                                </nav>
+                            </div>
+                        )}
+                    </header>
+                    <main>
+                        <section className="bg-gray-100 py-12">
+                            <div className="container mx-auto px-4">
+                                <div className="text-center mb-8">
+                                    <h1 className="text-4xl font-bold">Selamat Datang di ITB Trenggalek</h1>
+                                    <p className="text-gray-600">Semua tentang kampus Institut teknologi dan bisnis trenggalek ada disini.</p>
+                                </div>
+                                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                    <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+                                        <img src="https://placehold.co/400x300" alt="Gedung 2" className="w-full h-48 object-cover"/>
+                                        <div className="p-4 text-center">
+                                            <h2 className="text-lg font-bold">GEDUNG 2</h2>
+                                        </div>
+                                    </div>
+                                    <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+                                        <img src="https://placehold.co/400x300" alt="Gedung 1" className="w-full h-48 object-cover"/>
+                                        <div className="p-4 text-center">
+                                            <h2 className="text-lg font-bold">GEDUNG 1</h2>
+                                        </div>
+                                    </div>
+                                    <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+                                        <img src="https://placehold.co/400x300" alt="Ruang BLK" className="w-full h-48 object-cover"/>
+                                        <div className="p-4 text-center">
+                                            <h2 className="text-lg font-bold">RUANG BLK</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section className="bg-orange-500 py-12">
+                            <div className="container mx-auto px-4 text-white">
+                                <h2 className="text-3xl font-bold mb-4">SEJARAH SINGKAT</h2>
+                                <div className="flex flex-col md:flex-row items-center">
+                                    <div className="md:w-2/3">
+                                        <p className="mb-4">Sejarah berdirinya kampus Institut Teknologi dan Bisnis (ITB) Trenggalek berawal dari Pondok Pesantren Ar-Rohman yang didirikan KH. Rido Mahbub yang berinisiatif dengan membuka lembaga pendidikan MTs, SMP dan SMK. Kemudian berkat relasi Pengasuh Pondok yaitu Ibu Nyai Rofiqoh Chasanah, S.E., MM memiliki mimpi untuk mendirikan lembaga baru, beliau berniat mendirikan kampus Perguruan Tinggi yang berbasis teknologi dan bisnis. Beliaupun akan menjadi Rektor pertama dari ITB Trenggalek.</p>
+                                        <p className="mb-4">ITB Trenggalek akandipandangi memiliki 3 (tiga) program studi diantaranya program studi manajemen, ITE, bisnis digital dan ilmu komputer. ITB Trenggalek secara resmi didirikan beroperasi pada tanggal 29 juli 2021 berdasarkan surat kementerian pendidikan, teknologi dan pendidikan tinggi dengan nomor surat : 3162/D/T/2021.</p>
+                                    </div>
+                                    <div className="md:w-1/3">
+                                        <img src="https://placehold.co/400x300" alt="Gedung ITB Trenggalek" className="w-full h-48 object-cover rounded-lg"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section className="py-12">
+                            <div className="container mx-auto px-4">
+                                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                                    <div>
+                                        <h3 className="text-xl font-bold">Gedung ITB Trenggalek</h3>
+                                        <p>Gedung ITB Trenggalek di bangun pada hari kamis, 3 september 2020</p>
+                                    </div>
+                                    <div>
+                                        <h3 className="text-xl font-bold">Ruang Kelas</h3>
+                                        <p>ITB Trenggalek memiliki 6 kelas utama untuk perkuliahan 3 prodi.</p>
+                                    </div>
+                                    <div>
+                                        <h3 className="text-xl font-bold">Logo ITB Trenggalek</h3>
+                                        <p>Logo ITB Trenggalek yang berwarna cerah, hitam dan putih melambangkan keseri, bahagia, dan percaya diri. Ini hal pendidikan moderen budaya kerja dan semangat kerja serta solidaritas yang tinggi.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section className="py-12">
+                            <div className="container mx-auto px-4">
+                                <h2 className="text-3xl font-bold mb-4">VISI MISI DAN TUJUAN</h2>
+                                <div className="flex flex-col md:flex-row items-center">
+                                    <div className="md:w-1/3">
+                                        <img src="https://placehold.co/400x300" alt="Gedung ITB Trenggalek" className="w-full h-48 object-cover rounded-lg"/>
+                                    </div>
+                                    <div className="md:w-2/3 md:pl-8">
+                                        <h3 className="text-2xl font-bold mb-2">Visi Institut Teknologi dan Bisnis Trenggalek</h3>
+                                        <p className="mb-4">" Menjadi Institusi Unggul dan Terkenal Yang Berwawasan Global Untuk Menjunjung Ilmu Pengetahuan, Teknologi dan Seni serta Berjiwa Enterpreneur yang Inovatif Pada Tahun 2035."</p>
+                                        <h3 className="text-2xl font-bold mb-2">Misi Institut Teknologi dan Bisnis Trenggalek</h3>
+                                        <ul className="list-disc list-inside mb-4">
+                                            <li>Melaksanakan pendidikan kepada masyarakat melalui pendidikan dan pelatihan dalam bidang teknologi dan bisnis.</li>
+                                            <li>Menyelenggarakan pendidikan yang unggul untuk melahirkan profesional yang siap mempersiapkan lulusan unggul yang memiliki integritas dan kejujuran yang tinggi.</li>
+                                            <li>Menyelenggarakan pendidikan tinggi yang berbasis riset dan global dalam rangka memenuhi tuntutan pengguna dalam menjawab perkembangan teknologi dan kesejahteraan masyarakat.</li>
+                                            <li>Mengembangkan riset dalam bidang teknologi dan bisnis yang inovatif.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section className="py-12">
+                            <div className="container mx-auto px-4">
+                                <h2 className="text-3xl font-bold mb-4">TUJUAN</h2>
+                                <div className="bg-white rounded-lg shadow-lg p-6">
+                                    <h3 className="text-2xl font-bold mb-2">Tujuan Institut Teknologi dan Bisnis Trenggalek</h3>
+                                    <ul className="list-disc list-inside">
+                                        <li>Menghasilkan lulusan yang inovatif dan profesional, berketuhanan kepada Tuhan Yang Maha Esa dan mempunyai komitmen untuk memegang teguh Pancasila dan UUD 1945 yang berjiwa enterpreneur yang kreatif dan inovatif</li>
+                                        <li>Menghasilkan lulusan yang mampu bersaing secara global dan relevan dengan kebutuhan pengguna dalam menjawab perkembangan teknologi dan kesejahteraan masyarakat.</li>
+                                        <li>Menghasilkan lulusan unggul dan tepat guna untuk mendukung perkembangan ilmu pengetahuan teknologi yang inovatif dan</li>
+                                        <li>Terselenggaranya pengabdian kepada masyarakat melalui pendidikan dan pelatihan dalam bidang teknologi dan bisnis.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                    </main>
+                    <footer className="bg-gray-100 py-12">
+                        <div className="container mx-auto text-center px-4">
+                            <div className="flex flex-col md:flex-row justify-between items-center mb-8">
+                                <img src="https://placehold.co/50x50" alt="ITB Trenggalek Logo" className="h-10 mb-4 md:mb-0"/>
+                                <div className="text-gray-600">
+                                    <p>NEW INNOVATION FOR SOCIETY</p>
+                                </div>
+                                <div className="flex space-x-4">
+                                    <a href="#" className="text-gray-600 hover:text-orange-500"><i className="fab fa-facebook-f"></i></a>
+                                    <a href="#" className="text-gray-600 hover:text-orange-500"><i className="fab fa-twitter"></i></a>
+                                    <a href="#" className="text-gray-600 hover:text-orange-500"><i className="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                                <div>
+                                    <h3 className="text-xl font-bold">Jam Buka</h3>
+                                    <p>Senin – Jumat</p>
+                                    <p>09:00 AM – 03:00 PM</p>
+                                </div>
+                                <div>
+                                    <h3 className="text-xl font-bold">Link Cepat</h3>
+                                    <p><a href="#" className="text-gray-600 hover:text-orange-500">Home</a></p>
+                                    <p><a href="#" className="text-gray-600 hover:text-orange-500">Tentang Kami</a></p>
+                                    <p><a href="#" className="text-gray-600 hover:text-orange-500">Layanan</a></p>
+                                    <p><a href="#" className="text-gray-600 hover:text-orange-500">Berita</a></p>
+                                    <p><a href="#" className="text-gray-600 hover:text-orange-500">Kontak Kami</a></p>
+                                </div>
+                                <div>
+                                    <h3 className="text-xl font-bold">Lokasi Kami</h3>
+                                    <p>Kelutan, Kec. Trenggalek, Kabupaten Trenggalek, Jawa Timur 66313</p>
+                                </div>
+                            </div>
+                            <div className="mt-8 text-gray-600">
+                                <p>Copyright © 2024 by Wahyu</p>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            );
+        };
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>
